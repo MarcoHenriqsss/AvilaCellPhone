@@ -380,8 +380,8 @@ function App() {
                     <Battery className="h-6 w-6 text-orange-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">POWER CELL</h3>
-                    <div className="text-xs font-mono text-orange-400/60">TROCA DE BATERIA</div>
+                    <h3 className="text-lg font-bold text-white">TROCA DE BATERIA</h3>
+                    <div className="text-xs font-mono text-orange-400/60">POWER CELL</div>
                   </div>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -398,8 +398,8 @@ function App() {
                     <Wrench className="h-6 w-6 text-red-400" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">HARDWARE FIX</h3>
-                    <div className="text-xs font-mono text-red-400/60">REPARO DE COMPONENTES</div>
+                    <h3 className="text-lg font-bold text-white">REPARO DE COMPONENTES</h3>
+                    <div className="text-xs font-mono text-red-400/60">HARDWARE FIX</div>
                   </div>
                 </div>
                 <p className="text-gray-400 text-sm leading-relaxed">
