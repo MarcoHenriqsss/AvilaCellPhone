@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Navigation Links */
+  .nav-link {
+    @apply text-gray-300 hover:text-cyan-400 transition-all duration-300 font-mono text-sm relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Cyber Buttons */
+  .cyber-button {
+    @apply relative px-8 py-4 font-bold text-sm tracking-wider transition-all duration-300 overflow-hidden;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%);
+  }
+  
+  .cyber-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .cyber-button:hover::before {
+    left: 100%;
+  }
+  
+  .cyber-button-primary {
+    @apply bg-gradient-to-r from-cyan-600 to-purple-600 text-white;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  
+  .cyber-button-primary:hover {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+    transform: translateY(-2px);
+  }
+  
+  .cyber-button-secondary {
+    @apply bg-gradient-to-r from-green-600 to-cyan-600 text-white;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  
+  .cyber-button-secondary:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Tech Cards */
+  .tech-card {
+    @apply relative bg-gradient-to-br from-gray-900/50 to-black/50 backdrop-blur-sm border border-gray-700/50 rounded-lg overflow-hidden transition-all duration-500;
+  }
+  
+  .tech-card:hover {
+    @apply border-cyan-500/50;
+    transform: scale(1.02);
+  }
+  
+  .tech-card-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tech-card:hover .tech-card-glow {
+    opacity: 1;
+  }
+
+  /* Tech Icon Container */
+  .tech-icon-container {
+    @apply relative w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center border border-gray-700;
+  }
+  
+  .tech-icon-container::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, rgba(6, 182, 212, 0.5), rgba(139, 92, 246, 0.5));
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .tech-card:hover .tech-icon-container::before {
+    opacity: 1;
+  }
+
+  /* Tech Image Placeholder */
+  .tech-image-placeholder {
+    @apply relative h-48 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg border border-gray-700 overflow-hidden;
+  }
+
+  /* Service Cards */
+  .service-card {
+    @apply relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-gray-700/50 rounded-lg overflow-hidden transition-all duration-300;
+  }
+  
+  .service-card:hover {
+    @apply border-purple-500/50;
+    transform: translateY(-4px);
+  }
+  
+  .service-card-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .service-card:hover .service-card-glow {
+    opacity: 1;
+  }
+
+  /* Service Icon Container */
+  .service-icon-container {
+    @apply relative w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center border border-gray-700;
+  }
+
+  /* Contact Cards */
+  .contact-card {
+    @apply relative bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm border border-gray-700/50 rounded-lg overflow-hidden transition-all duration-500;
+  }
+  
+  .contact-card:hover {
+    @apply border-green-500/50;
+    transform: scale(1.02);
+  }
+  
+  .contact-card-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgba(34, 197, 94, 0.1), rgba(236, 72, 153, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .contact-card:hover .contact-card-glow {
+    opacity: 1;
+  }
+
+  /* Contact Icon Container */
+  .contact-icon-container {
+    @apply relative w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border border-gray-700 mx-auto;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0891b2, #7c3aed);
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
